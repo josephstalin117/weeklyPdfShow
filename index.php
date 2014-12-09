@@ -1,6 +1,7 @@
-<?php
+﻿<?php
 	$dir=dirname(__FILE__);
 	$filesnames=scandir('pdfs');
+	$fl_array = preg_grep("/\.pdf/", $filesnames);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
 				</tr>
 				<tbody>
 				<?php
-				foreach ($filesnames as $name){
+				foreach ($fl_array as $name){
 				?>
 				<?php
 					$url="read.php?name=".$name;
@@ -34,23 +35,9 @@
 				</tbody>
 			</table>
 		</div>			
-		<div id="footer" class="navbar-fixed-bottom">
-			<p class="text-muted credit"><a href="http://www.ctaasso.com">电脑技术协会</a> and <a href="http://weibo.com/josephstalin177">Joseph Lin</a>.</p>
-		</div>
-
 		<!-- /container -->
 	</div>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.min.js"></script>
 </body>
 </html>
-<?php
-
-// $filesnames=scandir('pdfs');
-// foreach ($filesnames as $name){
-// 	$url="read.php?name=".$name;
-// 	$aurl="<a href=\"".$url."\">".$name."</a>";
-// 	echo $aurl."<br/>";
-// }
-
-?>
