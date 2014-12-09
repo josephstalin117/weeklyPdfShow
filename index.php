@@ -1,0 +1,56 @@
+<?php
+	$dir=dirname(__FILE__);
+	$filesnames=scandir('pdfs');
+?>
+
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>周记</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/jumbotron-narrow.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h3 class="text-muted " id="title"><strong>周记</strong></h3>
+		</div>
+		<div>
+			<table class="table table-bordered">
+				<tr>
+					<th>title</th>
+				</tr>
+				<tbody>
+				<?php
+				foreach ($filesnames as $name){
+				?>
+				<?php
+					$url="read.php?name=".$name;
+					$aurl="<a href=\"".$url."\">".$name."</a>";
+					echo "<tr><td>".$aurl."</td></tr>";
+				}
+				?>
+				</tbody>
+			</table>
+		</div>			
+		<div id="footer" class="navbar-fixed-bottom">
+			<p class="text-muted credit"><a href="http://www.ctaasso.com">电脑技术协会</a> and <a href="http://weibo.com/josephstalin177">Joseph Lin</a>.</p>
+		</div>
+
+		<!-- /container -->
+	</div>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.min.js"></script>
+</body>
+</html>
+<?php
+
+// $filesnames=scandir('pdfs');
+// foreach ($filesnames as $name){
+// 	$url="read.php?name=".$name;
+// 	$aurl="<a href=\"".$url."\">".$name."</a>";
+// 	echo $aurl."<br/>";
+// }
+
+?>
