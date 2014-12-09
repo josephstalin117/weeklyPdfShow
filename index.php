@@ -1,6 +1,6 @@
 ﻿<?php
 	$dir=dirname(__FILE__);
-	$filesnames=scandir('pdfs');
+	$filesnames=scandir('/srv/ftp/weekly');
 	$fl_array = preg_grep("/\.pdf/", $filesnames);
 ?>
 
